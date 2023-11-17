@@ -2,7 +2,7 @@
 
 설치방법
 
-1.아나콘다 설치(참조: https://benn.tistory.com/26)
+1. 아나콘다 설치(참조: https://benn.tistory.com/26)
 
 2. 윈도우 환경이라면, git 설치하기(참조: https://goddaehee.tistory.com/216)
 
