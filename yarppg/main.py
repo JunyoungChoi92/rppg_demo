@@ -43,8 +43,6 @@ def main():
                 )
     
     rppg.add_processor(processor)
-    for c in "rgb":
-        rppg.add_processor(ColorMeanProcessor(channel=c, winsize=1))
 
     if args.savepath:
         rppg.output_filename = args.savepath
@@ -56,8 +54,6 @@ def main():
                      graphwin=300,
                      blur_roi=args.blur,
                      )
-    for i in range(3):
-        win.set_pen(index=i+1, color="rgb"[i], width=1)
 
     return win.execute()
 

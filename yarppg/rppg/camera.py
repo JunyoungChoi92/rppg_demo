@@ -15,7 +15,7 @@ class Camera(QThread):
 
     frame_received = pyqtSignal(np.ndarray)
 
-    def __init__(self, video=0, parent=None, limit_fps=None):
+    def __init__(self, video=1, parent=None, limit_fps=None):
         """Initialize Camera instance
 
         Args:

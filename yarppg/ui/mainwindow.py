@@ -63,7 +63,7 @@ class MainWindow(QMainWindow):
         for p in self.plots:
             p.disableAutoRange()
 
-        self.hr_label = layout.addLabel(text="Heart rate:", row=4, col=0,
+        self.hr_label = layout.addLabel(text="Heart rate:", row=2, col=1,
                                         size="20pt")
         # self.respr_label = layout.addLabel(text="Respiratory rate:", row=5, col=0,
         #                                 size="20pt")
@@ -107,7 +107,7 @@ class MainWindow(QMainWindow):
         img = results.rawimg
         roi = results.roi
         roi.pixelate_face(img, self.blur_roi)
-        roi.draw_roi(img)
+        # roi.draw_roi(img)
 
         self.img.setImage(img)
 
