@@ -177,6 +177,7 @@ class FaceMeshDetector(ROIDetector):
                       contour=False, irises=False):
         if multi_face_landmarks is None:
             return
+        drawing_spec = mp_drawing.DrawingSpec(thickness=2, circle_radius=1)
 
         for face_landmarks in multi_face_landmarks:
             if tesselate:
@@ -184,7 +185,7 @@ class FaceMeshDetector(ROIDetector):
                     image=img,
                     landmark_list=face_landmarks,
                     connections=mp_face_mesh.FACEMESH_TESSELATION,
-                    landmark_drawing_spec=None,
+                    landmark_drawing_spec=drawing_spec,
                     connection_drawing_spec=mp_drawing_styles
                     .get_default_face_mesh_tesselation_style())
             if contour:
@@ -192,7 +193,7 @@ class FaceMeshDetector(ROIDetector):
                     image=img,
                     landmark_list=face_landmarks,
                     connections=mp.solutions.face_mesh.FACEMESH_CONTOURS,
-                    landmark_drawing_spec=None,
+                    landmark_drawing_spec=drawing_spec,
                     connection_drawing_spec=mp.solutions.drawing_styles
                     .get_default_face_mesh_contours_style())
             if irises and len(face_landmarks) > 468:
@@ -200,6 +201,6 @@ class FaceMeshDetector(ROIDetector):
                     image=img,
                     landmark_list=face_landmarks,
                     connections=mp_face_mesh.FACEMESH_IRISES,
-                    landmark_drawing_spec=None,
+                    landmark_drawing_spec=drawing_spec,
                     connection_drawing_spec=mp_drawing_styles
                     .get_default_face_mesh_iris_connections_style())
